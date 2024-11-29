@@ -15,146 +15,142 @@
 </head>
 
 <body>
-    <div class="cp_content">
-        <div class="header_top_area">
-            <div class="navbar">
-                <a href="index.php" id="m_ext">Вход</a>
-                <a href="?p=1" id="m_ext">Създай акаунт</a>
+
+    <div class="container my-5" style="max-width: 900px;">
+        <!-- Toggle Buttons -->
+        <ul class="nav nav-tabs justify-content-center border-0" id="loginRegisterTabs" role="tablist">
+            <li class="nav-item position-relative w-50" role="presentation">
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1" style="border-top-left-radius: 6px;
+    border-top-right-radius: 6px;">
+                </div>
+                <button class="nav-link active text-white w-100 text-uppercase" style="background-color: unset;"
+                    id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab"
+                    aria-controls="login" aria-selected="true">
+                    Login
+                </button>
+            </li>
+            <li class="nav-item position-relative w-50" role="presentation">
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1" style="border-top-left-radius: 6px;
+    border-top-right-radius: 6px;">
+                </div>
+                <button class="nav-link text-white w-100 text-uppercase" style="background-color: unset;"
+                    id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab"
+                    aria-controls="register" aria-selected="false">
+                    Register
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Login Form -->
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <form class="p-5 position-relative text-white">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginUsername" class="form-label">Email</label>
+                        <input type="text" id="loginUsername" class="form-control" placeholder="example@gmail.com">
+                    </div>
+                    <div class="mb-5">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="********">
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 ">Login</button>
+                </form>
             </div>
-        </div>
-        <div class="content_adm center">
-            <div class="content_area_adm aligncenter">
-                <div class="page_option_area aligncenter">
-                    <div id="title">Николов Градинска Система /Вход</div>
-                    <div id="content">
-                        <div class="adm_form" style="font-weight:bold;">
-                            <form method="post" action="?p=1" id="reg_form" class="adm_form">
 
-                                <div class="adm_form floatcenter" style="text-align: center; margin-top:0px;">
-                                    Система ID: <br />
-                                    <input type="text" maxlength="10" name="sys_id" id="sys_id" size="33"
-                                        class="login_form_input validate[required,custom[onlyNumber],length[8,8]]">
+            <!-- Register Form -->
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                <form class="p-5 position-relative text-white">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1">
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-12 d-flex flex-column justify-content-center">
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- System ID -->
+                                    <div class="mb-3">
+                                        <label for="systemId" class="form-label">System ID</label>
+                                        <input type="text" id="systemId" class="form-control" placeholder="System ID">
+                                    </div>
                                 </div>
-                                <div id="sys_id_availability_response"></div>
-                                <div class="cleaner"></div>
-                                <div class="adm_form floatcenter" style="text-align: center; margin-top:20px;">
-                                    Потребител: <br />
-
-                                    <input type="text" maxlength="50" name="username" id="username" size="33"
-                                        class="login_form_input validate[required,custom[noSpecialCaracters],length[6,15]]">
-
+                                <div class="col-6">
+                                    <!-- Potrebitel -->
+                                    <div class="mb-3">
+                                        <label for="potrebitel" class="form-label">User</label>
+                                        <input type="text" id="potrebitel" class="form-control" placeholder="Username">
+                                    </div>
                                 </div>
-                                <div id="username_availability_response"></div>
-                                <div class="cleaner"></div>
-
-                                <div class="adm_form floatleft" style="text-align: center; ">Парола: <br />
-
-
-                                    <input maxlength="64" type="password" placeholder="" name="reg_pass" id="reg_pass"
-                                        size="24"
-                                        class="login_form_input validate[required,custom[noSpecialCaracters],length[8,15]]">
-
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- Password -->
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" id="password" class="form-control"
+                                            placeholder="Password">
+                                    </div>
                                 </div>
-                                <div class="adm_form floatleft" style="text-align: center; ">Повтори Парола: <br />
-
-
-                                    <input maxlength="64" type="password" placeholder="" name="reg_pass_2"
-                                        id="reg_pass_2" size="24"
-                                        class="login_form_input validate[required,confirm[reg_pass]]">
-                                    <br />
-                                    <input type="checkbox" id="showpass" onclick="show_pass()" class=""><label
-                                        for="showpass" class="">Покажи</label>
+                                <div class="col-6">
+                                    <!-- New Password -->
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">New Password</label>
+                                        <input type="password" id="newPassword" class="form-control"
+                                            placeholder="New password">
+                                    </div>
                                 </div>
-
-                                <div class="cleaner"></div>
-
-                                <div class="adm_form floatcenter" style="text-align: center; margin-top:20px;">Име и
-                                    Фамилия: <br />
-
-                                    <input type="text" name="name" id="name" size="33"
-                                        class="login_form_input validate[required,custom[noSpecialCaracters],length[10,30]]">
-
-
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- Name First -->
+                                    <div class="mb-3">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" id="firstName" class="form-control" placeholder="First name">
+                                    </div>
                                 </div>
-                                <div class="cleaner"></div>
-
-                                <div class="adm_form floatleft" style="text-align: center;">Емайл: <br />
-
-
-                                    <input maxlength="40" type="text" placeholder="" name="email" id="email" size="24"
-                                        class="login_form_input validate[required,custom[email],length[10,40]]">
-
+                                <div class="col-6">
+                                    <!-- Name Last -->
+                                    <div class="mb-3">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" id="lastName" class="form-control" placeholder="Last name">
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="example@gmail.com">
+                            </div>
 
-                                <div class="adm_form floatleft" style="text-align: center;  ">Повтори Емайл: <br />
+                            <!-- Secret Question -->
+                            <div class="mb-3">
+                                <label for="secretQuestion" class="form-label">Secret Question</label>
+                                <select id="secretQuestion" class="form-select">
+                                    <option value="" disabled selected>Select a secret question</option>
+                                    <option value="1">What was your childhood nickname?</option>
+                                    <option value="2">What is the name of your first pet?</option>
+                                    <option value="3">What was the name of your elementary school?
+                                    </option>
+                                </select>
+                            </div>
 
-
-                                    <input maxlength="50" type="text" placeholder="" name="email_2" id="email_2"
-                                        size="24" class="login_form_input validate[required,confirm[email]]">
-
-                                </div>
-
-                                <div class="cleaner"></div>
-                                <div id="email_availability_response" style="text-align: center;"></div>
-                                <div class="cleaner"></div>
-                                <div class="adm_form floatcenter" style="text-align: center; margin-top:25px;">Таен
-                                    въпрос: <br />
-
-                                    <select name='sec_quest' class="login_form_input select validate[required]"
-                                        id="sec_quest" style="height:25px; width:260px;">
-
-                                        <option value="">---</option>
-
-                                        <option>Името на майка ми</option>
-
-                                        <option>Моето първо училище</option>
-
-                                        <option>Марката на моя автомобил</option>
-
-                                        <option>Какво обичам</option>
-
-                                        <option>Друго</option>
-
-                                    </select>
-
-                                </div>
-
-
-                                <div class="cleaner"></div>
-                                <div class="adm_form floatleft" style="text-align: center; ">Отговор: <br />
-
-
-                                    <input maxlength="64" type="password" name="sec_answer" id="sec_answer" size="24"
-                                        class="login_form_input validate[required,length[6,25],custom[noSpecialCaracters]]">
-
-                                </div>
-                                <div class="adm_form floatleft" style="text-align: center;  ">Повтори Отговор:
-                                    <br />
-
-
-                                    <input maxlength="64" type="password" name="sec_answer_2" id="sec_answer_2"
-                                        size="24" class="login_form_input validate[required,confirm2[sec_answer]]">
-                                    <br />
-                                    <input type="checkbox" id="sec_answer_2" onclick="show_answer()" class=""><label
-                                        for="show_sec_answer_2" class="">Покажи</label>
-                                </div>
-
-
-
-
-                                <div class="cleaner"></div>
-
-                                <div class="adm_form floatcenter">
-                                    <button type="submit" name="usr_register" class="button_submit">Регистрация</button>
-                                </div>
-                                <div class="cleaner"></div>
-                            </form>
+                            <!-- Answer -->
+                            <div class="mb-3">
+                                <label for="answer" class="form-label">Answer</label>
+                                <input type="text" id="answer" class="form-control" placeholder="Enter your answer">
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success px-4 w-100">Register</button>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="footer_area" id="footer"><strong class="alignright">Създадено от Николай Николов 2024</strong></div>
     </div>
 </body>
 
