@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>	
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+		<!-- end no cache headers -->
+	<meta name="author" content="Nikolay Nikolov " />
+	<meta name="generator" content="Nikolay Nikolov Project" />
+	<link rel="canonical" href="http://snikolov.eu/" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title id="web_title">Николов Градина 1.0-Администрация</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />	
+		<link rel="stylesheet" href="css/form_validate.css" type="text/css" media="screen" />	
+		<script type="text/javascript" src="js/jquery.min.js"></script>	
+		<script type="text/JavaScript" src="js/form_validate.js"></script> 
+		<script type="text/javascript" src="js/form_validate_bg_str.js"></script> 
+		
+
+
+<script>
+
+
+
+
+
+
+function resetButton() {
+
+var confirm = window.confirm("Сигурен ли си че искаш да рестартираш системата?");
+if (confirm) {
+     var xhr = new XMLHttpRequest();
+  xhr.open("GET", "restart", true);
+  xhr.send();
+
+}
+}
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function my_menu() {
+  document.getElementById("Dropdown_menu").classList.toggle("show");
+
+    var Dropdown_menu_2 = document.getElementById("Dropdown_menu_2");
+
+
+    if (Dropdown_menu_2.classList.contains('show')) {
+      Dropdown_menu_2.classList.remove('show');
+    }
+
+}
+
+
+
+
+function my_menu_2() {
+	
+ document.getElementById("Dropdown_menu_2").classList.toggle("show");
+   
+
+	  var Dropdown_menu = document.getElementById("Dropdown_menu");
+
+
+    if (Dropdown_menu.classList.contains('show')) {
+      Dropdown_menu.classList.remove('show');
+    }   
+}
+
+
+// Close the dropdown if the user clicks outside of it
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+	  var Dropdown_menu = document.getElementById("Dropdown_menu");
+    var Dropdown_menu_2 = document.getElementById("Dropdown_menu_2");
+  if (!e.target.matches('.dropbtn')) {
+	    if (Dropdown_menu_2.classList.contains('show')) {
+      Dropdown_menu_2.classList.remove('show');
+    }
+
+    if (Dropdown_menu.classList.contains('show')) {
+      Dropdown_menu.classList.remove('show');
+    }
+
+  }
+  
+
+}
+
+
+
+			$(document).ready(function() {
+				$("#reg_form").validationEngine()
+			});
+			
+			function show_pass() {
+			var x = document.getElementById('reg_pass');
+			var y = document.getElementById('reg_pass_2');
+			x.type==='password'?x.type='text':x.type='password';
+			y.type==='password'?y.type='text':y.type='password';
+			}
+						function show_answer() {
+			var x = document.getElementById('sec_answer');
+			var y = document.getElementById('sec_answer_2');
+			x.type==='password'?x.type='text':x.type='password';
+			y.type==='password'?y.type='text':y.type='password';
+			}
+
+	
+
+</script>
+	
+
+</head>
+
+<body>
+
+
+								<div class="cp_content">
+				<div class="header_top_area">
+
+				
+							
+							<div class="navbar">
+					<a href="#" onclick="changeLanguage('bg')" id="bg_b" style="display: none;"><img src="img/Bulgarian.png" border=0 width=30 height=20></a>
+<a href="#" onclick="changeLanguage('eng')" id="en_b"><img src="img/English.png" border=0 width=30 height=20></a>	
+			<a href="index.php"  id="m_ext">Вход</a>
+		<a href="?p=1"  id="m_ext">Създай акаунт</a>
+		</div>
+
+				</div>
+				
+				
+					<div class="content_adm center">
+	<div class="content_area_adm aligncenter">
+<div class="page_option_area aligncenter">
+    <div id="title">Николов Градинска Система /Вход</div>
+ <div id="content">
+
+
+		    		
+
+
+
+ <div class="adm_form" style="font-weight:bold;">
+
+<form method="post" action="?p=1" id="reg_form" class="adm_form">  
+<body>
+
+
+<div class="adm_form floatcenter" style="text-align: center; margin-top:0px;">Система ID: <br /> 
+
+<input  type="text"  maxlength="10" name="sys_id" id="sys_id" size="33" class="login_form_input validate[required,custom[onlyNumber],length[8,8]]">
+
+
+</div>
+ <div id="sys_id_availability_response"></div>
+<div class="cleaner"></div>
+<div class="adm_form floatcenter" style="text-align: center; margin-top:20px;">Потребител:  <br />
+
+<input  type="text"  maxlength="50" name="username" id="username" size="33" class="login_form_input validate[required,custom[noSpecialCaracters],length[6,15]]">
+
+</div>
+ <div id="username_availability_response"></div>
+<div class="cleaner"></div>
+
+<div class="adm_form floatleft" style="text-align: center; ">Парола: <br />
+
+
+<input   maxlength="64" type="password" placeholder="" name="reg_pass" id="reg_pass" size="24" class="login_form_input validate[required,custom[noSpecialCaracters],length[8,15]]" >
+
+</div>
+<div class="adm_form floatleft" style="text-align: center; ">Повтори Парола: <br />
+
+
+<input   maxlength="64" type="password" placeholder="" name="reg_pass_2" id="reg_pass_2" size="24" class="login_form_input validate[required,confirm[reg_pass]]" >
+<br />
+<input type="checkbox" id="showpass" onclick="show_pass()" class=""><label for="showpass" class="">Покажи</label>
+</div>
+
+<div class="cleaner"></div>
+
+<div class="adm_form floatcenter" style="text-align: center; margin-top:20px;">Име и Фамилия: <br /> 
+
+<input  type="text" name="name" id="name" size="33" class="login_form_input validate[required,custom[noSpecialCaracters],length[10,30]]">
+
+
+</div>
+<div class="cleaner"></div>
+
+<div class="adm_form floatleft" style="text-align: center;">Емайл: <br />
+
+
+<input   maxlength="40" type="text" placeholder="" name="email" id="email" size="24" class="login_form_input validate[required,custom[email],length[10,40]]" >
+
+</div>
+
+<div class="adm_form floatleft" style="text-align: center;  ">Повтори Емайл: <br />
+
+
+<input   maxlength="50" type="text" placeholder="" name="email_2" id="email_2" size="24" class="login_form_input validate[required,confirm[email]]" >
+
+</div>
+
+<div class="cleaner"></div>
+ <div id="email_availability_response"  style="text-align: center;"></div>
+<div class="cleaner"></div>
+<div class="adm_form floatcenter" style="text-align: center; margin-top:25px;">Таен въпрос: <br /> 
+
+						  <select name='sec_quest' class="login_form_input select validate[required]" id="sec_quest" style="height:25px; width:260px;">
+
+<option value="">---</option>
+
+<option>Името на майка ми</option>
+
+<option>Моето първо училище</option>
+
+<option>Марката на моя автомобил</option>
+
+<option>Какво обичам</option>
+
+<option>Друго</option>
+
+</select>
+
+</div>
+
+
+<div class="cleaner"></div>
+<div class="adm_form floatleft" style="text-align: center; ">Отговор: <br />
+
+
+<input   maxlength="64" type="password" name="sec_answer" id="sec_answer" size="24" class="login_form_input validate[required,length[6,25],custom[noSpecialCaracters]]" >
+
+</div>
+<div class="adm_form floatleft" style="text-align: center;  ">Повтори Отговор: <br />
+
+
+<input   maxlength="64" type="password"  name="sec_answer_2" id="sec_answer_2" size="24" class="login_form_input validate[required,confirm2[sec_answer]]" >
+<br />
+<input type="checkbox" id="sec_answer_2" onclick="show_answer()" class=""><label for="show_sec_answer_2" class="">Покажи</label>
+</div>
+
+
+
+
+ 	<div class="cleaner"></div>
+
+<div class="adm_form floatcenter">
+ 	<button type="submit" name="usr_register" class="button_submit">Регистрация</button>
+</div>
+ 	<div class="cleaner"></div>
+</body>
+ </form>
+    </div>
+     <script>
+        $(document).ready(function() {
+                        $("#sys_id").keyup(function() {
+                var sys_id = $(this).val().trim();
+                if (sys_id != '' && sys_id.length > 7) {
+                    $.ajax({
+                        url: 'inc/validateID.php',
+                        type: 'post',
+                        data: { sys_id: sys_id },
+                        success: function(response) {
+                            $('#sys_id_availability_response').html(response);
+                        }
+                    });
+                } else {
+                    $("#sys_id_availability_response").html("");
+                }
+            });
+			
+			
+			
+			$("#username").keyup(function() {
+                var username = $(this).val().trim();
+                if (username != '' && username.length > 5) {
+                    $.ajax({
+                        url: 'inc/validateUser.php',
+                        type: 'post',
+                        data: { username: username },
+                        success: function(response) {
+                            $('#username_availability_response').html(response);
+                        }
+                    });
+                } else {
+                    $("#username_availability_response").html("");
+                }
+            });
+			
+			
+			$("#email").keyup(function() {
+                var email = $(this).val().trim();
+                if (email != '' && email.length > 10) {
+                    $.ajax({
+                        url: 'inc/validateEmail.php',
+                        type: 'post',
+                        data: { email: email },
+                        success: function(response) {
+                            $('#email_availability_response').html(response);
+                        }
+                    });
+                } else {
+                    $("#email_availability_response").html("");
+                }
+            });
+			
+        });
+    </script>
+
+		
+
+
+
+   
+   
+
+
+</div>
+</div>
+
+
+	</div>
+			</div>
+		<div class="footer_area" id="footer"><strong class="alignright" >Създадено от Николай Николов 2024</strong></div>
+			</div>	
+		<script type="text/JavaScript" src="js/lang_str.js"></script>
+		<script type="text/javascript" src="js/lang.js"></script>
+	 <script>
+
+
+    </script>
+	</body>
+	
+	
+</html>
