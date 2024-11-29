@@ -19,21 +19,19 @@
     <div class="container my-5" style="max-width: 900px;">
         <!-- Toggle Buttons -->
         <ul class="nav nav-tabs justify-content-center border-0" id="loginRegisterTabs" role="tablist">
-            <li class="nav-item position-relative w-50" role="presentation">
-                <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1" style="border-top-left-radius: 6px;
-    border-top-right-radius: 6px;">
+            <li class="nav-item position-relative w-50 p-5" role="presentation">
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1" style="border-top-left-radius: 5rem;">
                 </div>
-                <button class="nav-link active text-white w-100 text-uppercase" style="background-color: unset;"
+                <button class="nav-link active text-white w-100 text-uppercase border-secondary py-2" style="background-color: unset;border-radius: 1rem;"
                     id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab"
                     aria-controls="login" aria-selected="true">
                     Login
                 </button>
             </li>
-            <li class="nav-item position-relative w-50" role="presentation">
-                <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1" style="border-top-left-radius: 6px;
-    border-top-right-radius: 6px;">
+            <li class="nav-item position-relative w-50 p-5" role="presentation">
+                <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1" style="border-top-right-radius: 5rem;">
                 </div>
-                <button class="nav-link text-white w-100 text-uppercase" style="background-color: unset;"
+                <button class="nav-link text-white w-100 text-uppercase border-secondary py-2" style="background-color: unset;border-radius: 1rem;"
                     id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab"
                     aria-controls="register" aria-selected="false">
                     Register
@@ -45,8 +43,9 @@
         <div class="tab-content">
             <!-- Login Form -->
             <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                <form class="p-5 position-relative text-white">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1">
+                <form class="p-5 position-relative text-white pt-0">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1" style="border-bottom-right-radius: 5rem !important;
+    border-bottom-left-radius: 5rem !important;">
                     </div>
                     <div class="mb-3">
                         <label for="loginUsername" class="form-label">Email</label>
@@ -63,7 +62,8 @@
             <!-- Register Form -->
             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
                 <form class="p-5 position-relative text-white">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75 z-n1" style="border-bottom-right-radius: 5rem !important;
+    border-bottom-left-radius: 5rem !important;">
                     </div>
                     <div class="row mb-5">
                         <div class="col-12 d-flex flex-column justify-content-center">
